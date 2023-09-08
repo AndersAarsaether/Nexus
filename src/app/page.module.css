@@ -15,6 +15,7 @@
 .linksWrapper {
   width: 100%;
   padding-block: 2rem;
+  max-width: 30rem;
 }
 
 .linkbuttonsWrapper {
