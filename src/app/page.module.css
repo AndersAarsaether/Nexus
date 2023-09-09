@@ -18,9 +18,17 @@
   max-width: 30rem;
 }
 
-.linkbuttonsWrapper {
+.linkButtonsWrapper {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding-block: 2rem;
+  margin-block: 2rem;
+}
+
+.logoutButtonWrapper {
+  width: 60%;
+  height: 2rem;
+  max-width: 15rem;
+  margin-top: 1rem;
+  justify-content: center;
 }
