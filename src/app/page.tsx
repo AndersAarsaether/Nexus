@@ -1,6 +1,5 @@
 import LinkButton from "./components/link-button";
 import LogOutButton from "./components/logout-button";
-import PrimaryButton from "./components/logout-button";
 import HeartIcon from "./icons/HeartIcon";
 import MoneyIcon from "./icons/MoneyIcon";
 import ShoppingcartIcon from "./icons/ShoppincartIcon";
