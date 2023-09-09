@@ -1,5 +1,13 @@
-html {
-  background-color: #1F1F31;
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #1F1F31;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #F7E7CE;
+  }
 }
 
 * {
