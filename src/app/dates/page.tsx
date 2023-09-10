@@ -9,14 +9,9 @@ export default function DateNights(){
   const [dates, setDates] = useState<string[]>([]);
 
   const handleAddDate = () => {
-    // Get the input value
     const inputElement = document.getElementById('input') as HTMLInputElement;
     const newDate = inputElement.value;
-
-    // Add the new date to the dates array
     setDates([...dates, newDate]);
-
-    // Clear the input field
     inputElement.value = '';
   };
 
