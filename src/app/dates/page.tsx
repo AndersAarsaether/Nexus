@@ -22,7 +22,7 @@ export default function DateNights() {
       <div>
         <ul>
           {dates.map((date) => (
-            <li id={date}>{date}</li>
+            <li key={date}>{date}</li>
           ))}
         </ul>
       </div>
@@ -30,8 +30,7 @@ export default function DateNights() {
         <form>
           <input type="text" id="input" />
           <button type="button" onClick={handleAddDate}>
-            {" "}
-            Legg til{" "}
+            Legg til
           </button>
         </form>
       </div>
