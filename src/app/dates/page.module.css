@@ -6,6 +6,43 @@
   height: 100%;
 }
 
-.lovetext {
+.titleWrapper {
+
+}
+
+.title {
   color: #7E6859;
+}
+
+.header {
+  color: #7E6859
+}
+
+.dateListWrapper {
+
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateName {
+
+}
+
+.removeButton {
+
+}
+
+.inputWrapper {
+
+}
+
+.inputField {
+  
+}
+
+.addButton {
+  
 }

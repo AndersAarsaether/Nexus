@@ -7,32 +7,36 @@ export default function DateNights() {
   const [dates, setDates] = useState<string[]>([]);
 
   const handleAddDate = () => {
-    const inputElement = document.getElementById("input") as HTMLInputElement;
+    const inputElement = document.getElementById("inputField") as HTMLInputElement;
     const newDate = inputElement.value;
     setDates([...dates, newDate]);
     inputElement.value = "";
   };
 
+  const handleRemoveDate = (removedDate: string) => {
+    const filteredDates = dates.filter(date => date !== removedDate);
+    setDates(filteredDates);
+  };
+
   return (
     <div className={styles.container}>
-      <div>
-        <h1 className={styles.lovetext}>Date nights</h1>
-        <h2 className={styles.lovetext}>Her kan man legge inn date-ideer!</h2>
+      <div className={styles.titleWrapper}>
+        <h1 className={styles.title}>Date nights</h1>
+        <h2 className={styles.header}>Her kan man legge inn date-ideer!</h2>
       </div>
-      <div>
-        <ul>
-          {dates.map((date) => (
-            <li key={date}>{date}</li>
-          ))}
-        </ul>
+      <div className={styles.dateListWrapper}>
+        {dates.map((dateName) => (
+          <div className={styles.row} key={dateName} >
+            <span className={styles.dateName}>{dateName}</span>
+            <button className={styles.removeButton} type="button" onClick={() => handleRemoveDate(dateName)}>Fjern date</button>
+          </div>
+        ))}
       </div>
-      <div>
-        <form>
-          <input type="text" id="input" />
-          <button type="button" onClick={handleAddDate}>
-            Legg til
-          </button>
-        </form>
+      <div className={styles.inputWrapper}>
+        <input className={styles.inputField} type="text" id="inputField" />
+        <button className={styles.addButton} type="button" onClick={() => handleAddDate()}>
+          Legg til
+        </button>
       </div>
     </div>
   );
