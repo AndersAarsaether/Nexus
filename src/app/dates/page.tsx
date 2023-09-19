@@ -2,28 +2,34 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
-import { Date } from "@/model";
+import { DateNight } from "@/model";
 
-interface DateNights {
-  storeDate: (date: Date) => void;
-  deleteDate: (date: Date) => void;
+const storeDate = (dateNight: DateNight) => {
+  console.log(dateNight, "stored");
+}
+
+const deleteDate = (dateNight: DateNight) => {
+  console.log(dateNight, "deleted");
 }
 
 export default function DateNights() {
-  const [dates, setDates] = useState<Date[]>([]);
+  const [dates, setDates] = useState<DateNight[]>([]);
 
   const handleAddDate = () => {
-    const inputElement = document.getElementById(
-      "inputField"
-    ) as HTMLInputElement;
-    const newDate = inputElement.value;
-    setDates([...dates, { name: newDate }]);
+    const inputElement = document.getElementById("inputField") as HTMLInputElement;
+    const newDateName = inputElement.value;
+    const newDate = { name: newDateName } as DateNight
     inputElement.value = "";
+    
+    setDates([...dates, newDate]);
+    storeDate(newDate)
   };
 
-  const handleRemoveDate = (removedDate: Date) => {
-    const filteredDates = dates.filter((date) => date !== removedDate);
+  const handleRemoveDate = (removedDateNight: DateNight) => {
+    const filteredDates = dates.filter((date) => date !== removedDateNight);
+
     setDates(filteredDates);
+    deleteDate(removedDateNight);
   };
 
   return (

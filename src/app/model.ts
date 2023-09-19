@@ -1,3 +1,3 @@
-export interface Date {
+export interface DateNight {
   name: string;
 }
