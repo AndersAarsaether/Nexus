@@ -2,19 +2,27 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
+import { Date } from "@/model";
+
+interface DateNights {
+  storeDate: (date: Date) => void;
+  deleteDate: (date: Date) => void;
+}
 
 export default function DateNights() {
-  const [dates, setDates] = useState<string[]>([]);
+  const [dates, setDates] = useState<Date[]>([]);
 
   const handleAddDate = () => {
-    const inputElement = document.getElementById("inputField") as HTMLInputElement;
+    const inputElement = document.getElementById(
+      "inputField"
+    ) as HTMLInputElement;
     const newDate = inputElement.value;
-    setDates([...dates, newDate]);
+    setDates([...dates, { name: newDate }]);
     inputElement.value = "";
   };
 
-  const handleRemoveDate = (removedDate: string) => {
-    const filteredDates = dates.filter(date => date !== removedDate);
+  const handleRemoveDate = (removedDate: Date) => {
+    const filteredDates = dates.filter((date) => date !== removedDate);
     setDates(filteredDates);
   };
 
@@ -26,15 +34,25 @@ export default function DateNights() {
       </div>
       <div className={styles.dateListWrapper}>
         {dates.map((dateName) => (
-          <div className={styles.row} key={dateName} >
-            <span className={styles.dateName}>{dateName}</span>
-            <button className={styles.removeButton} type="button" onClick={() => handleRemoveDate(dateName)}>Fjern date</button>
+          <div className={styles.row} key={dateName.name}>
+            <span className={styles.dateName}>{dateName.name}</span>
+            <button
+              className={styles.removeButton}
+              type="button"
+              onClick={() => handleRemoveDate(dateName)}
+            >
+              Fjern date
+            </button>
           </div>
         ))}
       </div>
       <div className={styles.inputWrapper}>
         <input className={styles.inputField} type="text" id="inputField" />
-        <button className={styles.addButton} type="button" onClick={() => handleAddDate()}>
+        <button
+          className={styles.addButton}
+          type="button"
+          onClick={() => handleAddDate()}
+        >
           Legg til
         </button>
       </div>
