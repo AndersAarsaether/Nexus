@@ -33,7 +33,7 @@ export default function DateNights() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <div className={styles.titleWrapper}>
         <h1 className={styles.title}>Date nights</h1>
         <h2 className={styles.header}>Her kan man legge inn date-ideer!</h2>
