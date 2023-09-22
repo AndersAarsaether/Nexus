@@ -1,0 +1,11 @@
+.field {
+  border-radius: 0.5rem;
+  background-color: #353546;
+  border-width: 0px;
+  padding-inline: 1rem;
+  outline: none;
+  color: azure;
+  font-size: large;
+  height: 2.2rem;
+  width: 14rem;
+}

@@ -16,7 +16,7 @@ export default function RadioButton(props: RadioButtonProps){
           className={styles.button}
           style={{ 
             backgroundColor: props.selected === option ? props.colors[index] : 'inherit',
-            color: props.selected === option ? "#000" : 'azure',
+            color: props.selected === option ? "#19191b" : 'azure',
           }}
           onClick={() => props.setSelected(option)}
         >

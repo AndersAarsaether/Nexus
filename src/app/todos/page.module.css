@@ -2,3 +2,10 @@
   margin-block: 2rem;
   width: 20rem;
 }
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 4rem;
+}

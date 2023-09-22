@@ -1,12 +1,14 @@
 "use client"
 
+import { useState } from "react";
+import InputField from "@/components/input-field";
 import styles from "./page.module.css"
 import RadioButton from "@/components/radio-button";
-import { useState } from "react";
+import PrimaryButton from "@/components/primary-button";
 
 
 export default function Todos(){
-  const [user, setUser] = useState<string>()
+  const [user, setUser] = useState<string>("Begge")
 
   return (
     <div className="container">
@@ -18,6 +20,14 @@ export default function Todos(){
           options={["Anders", "Begge", "Vilde"]}
           colors={["#44EB9F", "#FDFF8A", "#E287CE"]}
         />
+        <div className={styles.inputWrapper}>
+          <InputField
+
+          />
+          <PrimaryButton 
+            label="Legg til"
+          />
+        </div>
       </div>
     </div>
   )
